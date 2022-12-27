@@ -20,7 +20,7 @@ rules:
     - or:
       - intent: open_incident
       - intent: password_reset
-      - intent: problem_email
+      - intent: problem_program
     - action: open_incident_form
     - active_loop: open_incident_form
 

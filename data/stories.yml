@@ -32,7 +32,7 @@ stories:
   - or:
     - intent: open_incident
     - intent: password_reset
-    - intent: problem_email
+    - intent: problem_program
   - action: open_incident_form
   - active_loop: open_incident_form
   - intent: help
@@ -46,7 +46,7 @@ stories:
   - or:
     - intent: open_incident
     - intent: password_reset
-    - intent: problem_email
+    - intent: problem_program
   - action: open_incident_form
   - active_loop: open_incident_form
   - intent: out_of_scope
@@ -85,7 +85,7 @@ stories:
   - or:
     - intent: open_incident
     - intent: password_reset
-    - intent: problem_email
+    - intent: problem_program
   - action: open_incident_form
   - active_loop: open_incident_form
   - active_loop: null
@@ -96,7 +96,7 @@ stories:
   - or:
     - intent: open_incident
     - intent: password_reset
-    - intent: problem_email
+    - intent: problem_program
   - action: open_incident_form
   - active_loop: open_incident_form
   - intent: incident_status

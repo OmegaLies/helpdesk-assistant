@@ -10,7 +10,7 @@ intents:
 - inform
 - thank
 - help
-- problem_email
+- problem_program
 - open_incident:
     use_entities: []
 - incident_status
@@ -92,8 +92,8 @@ slots:
       - active_loop: open_incident_form
         requested_slot: incident_title
     - type: from_trigger_intent
-      intent: problem_email
-      value: Problem with email
+      intent: problem_program
+      value: Problem with program
       conditions:
       - active_loop: open_incident_form
         requested_slot: incident_title
