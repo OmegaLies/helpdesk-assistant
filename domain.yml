@@ -24,6 +24,7 @@ intents:
 entities:
 - email
 - priority
+- program
 - handoff_to
 slots:
   confirm:
@@ -117,6 +118,16 @@ slots:
       - active_loop: open_incident_form
     - type: from_entity
       entity: priority
+  program:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: program
+        conditions:
+          - active_loop: open_incident_form
+      - type: from_entity
+        entity: program
   problem_description:
     type: text
     influence_conversation: false
@@ -157,6 +168,29 @@ responses:
   - text: What should we use for the title of this incident?
   utter_ask_problem_description:
   - text: What is the problem description for the issue?
+  utter_ask_program:
+  - text: What is the name of program, which isn't working?
+    buttons:
+    - payload: /inform{"program":"Word"}
+      title: Word
+    - payload: /inform{"program":"Excel"}
+      title: Excel
+    - payload: /inform{"program":"Power Point"}
+      title: PowerPoint
+    - payload: /inform{"program":"Google Chrome"}
+      title: Google Chrome
+    - payload: /inform{"program":"Opera"}
+      title: Opera
+    - payload: /inform{"program":"Mozila Firefox"}
+      title: Mozila Firefox
+    - payload: /inform{"program":"OutLook"}
+      title: OutLook
+    - payload: /inform{"program":"Skype"}
+      title: Skype
+    - payload: /inform{"program":"Teams"}
+      title: Teams
+    - payload: /inform{"program":"OneNote"}
+      title: OneNote
   utter_ask_priority:
   - text: What is the priority of this issue?
     buttons:
@@ -171,7 +205,7 @@ responses:
   utter_no_email:
   - text: Sorry, "{email}" isn't in our incident management system. Please try again.
   utter_help:
-  - text: "I can help you open a service request ticket, or check the status of your open incidents. \nYou can ask me things like: \n- Open an incident \n- Help me reset my password \n- I'm having a issue with my email \n- What's the status of the ticket I opened?"
+  - text: "I can help you open a service request ticket, or check the status of your open incidents. \nYou can ask me things like: \n- Open an incident \n- Help me reset my password \n- I'm having an issue with one of my programs \n- What's the status of the ticket I opened?"
   utter_welcome:
   - text: You're welcome!
   utter_default:

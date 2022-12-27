@@ -20,7 +20,14 @@ rules:
     - or:
       - intent: open_incident
       - intent: password_reset
-      - intent: problem_program
+    - action: open_incident_form
+    - active_loop: open_incident_form
+
+  - rule: start open incident program form
+    steps:
+    - intent: problem_program
+    - action: utter_ask_program
+    - active_loop: null
     - action: open_incident_form
     - active_loop: open_incident_form
 
